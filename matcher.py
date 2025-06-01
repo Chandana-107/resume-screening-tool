@@ -3,6 +3,14 @@ from sklearn.metrics.pairwise import cosine_similarity
 import re
 import spacy
 from functools import lru_cache
+import spacy
+from spacy.cli import download
+
+try:
+    spacy.load("en_core_web_sm")
+except OSError:
+    download("en_core_web_sm")
+
 
 nlp = spacy.load("en_core_web_sm")
 
