@@ -14,7 +14,7 @@ pip install -r requirements.txt
 python -m spacy download en_core_web_sm
 streamlit run app.py
 ```
-## 🧰 Tech Stack
+## Tech Stack
 
 - **Frontend**: Streamlit + Custom CSS
 - **Backend**: Python (NLP using SpaCy, Scikit-learn)
