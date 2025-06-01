@@ -13,7 +13,8 @@ def get_nlp():
         download("en_core_web_sm")
         nlp = spacy.load("en_core_web_sm")
     return nlp
-
+import spacy
+nlp = spacy.load("en_core_web_sm")  # or another model you're using
 
 def preprocess(text):
     text = re.sub(r"[^a-zA-Z0-9\s]", "", text)
