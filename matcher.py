@@ -6,13 +6,14 @@ from functools import lru_cache
 import spacy
 from spacy.cli import download
 
-try:
-    spacy.load("en_core_web_sm")
-except OSError:
-    download("en_core_web_sm")
+def get_nlp():
+    try:
+        nlp = spacy.load("en_core_web_sm")
+    except OSError:
+        download("en_core_web_sm")
+        nlp = spacy.load("en_core_web_sm")
+    return nlp
 
-
-nlp = spacy.load("en_core_web_sm")
 
 def preprocess(text):
     text = re.sub(r"[^a-zA-Z0-9\s]", "", text)
